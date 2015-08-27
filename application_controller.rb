@@ -8,12 +8,14 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
-  get '/full_list' do
+  post '/full_results' do
     erb :full_list
   end
 
-  get '/bin_list' do
+  post '/bin_results' do
     @recycle1 = Recycle.new(params[:input_address], params[:input_plastic])
-    erb :bin_list
+    @recycle1.address = params[:input_address]
+    @recycle1.plastic = params[:input_plastic]
+    erb :bin_results
   end
 end

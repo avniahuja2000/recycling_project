@@ -8,7 +8,8 @@ class Recycle
 #     }
 #   NYC_array = []
 #   NYC_array.push(bin_hash)
-  attr_accessor :address, :latitiude, :longitude
+  bins = [{:zip_code => 10466}]
+  attr_accessor :address, :latitiude, :longitude, :plastic
 #   geocoded_by :address
 #   after_validation :geocode
 
