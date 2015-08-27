@@ -13,9 +13,7 @@ class MyApp < Sinatra::Base
   end
 
   get '/bin_list' do
-    @recycle1 = Recycle.new
-    @recycle1.address = params[:input_address]
-    @recycle1.plastic = params[:input_plastic]
+    @recycle1 = Recycle.new(params[:input_address], params[:input_plastic])
     erb :bin_list
   end
 end
