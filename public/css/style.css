@@ -1,0 +1,60 @@
+html {
+  background: url(http://images.forwallpaper.com/files/thumbs/preview/9/98744__earth-planet-sun-space_p.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+h1 {
+  color: rgb(255,255,255);
+  text-align:center;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height:300px;
+  font-size:300%
+}
+
+h2{
+  color: rgb(255,255,255);
+  text-align:center;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height:30px;
+}
+
+h3{
+  color:rgb(255,255,255);
+  text-align:center;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height:30px;
+}
+
+h4{
+  color:rgb(255,255,255);
+  text-align:center;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height:30px;
+}
+
+p{
+  color:rgb(255,255,255);
+  text-align: left;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height:30px;
+}
+
+form{
+  width: 700px ;
+  margin-left: 0 auto;
+}
+label {
+    text-align:right;
+    width:100px;
+}
+input {
+    margin-left: 10px;
+}
+label.check, label.radio {
+    text-align:left;
+}
+}
+
+
