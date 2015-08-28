@@ -1,20 +1,45 @@
-# <div><iframe width="500px" title="Public Recycling Bins" height="425px" src="https://data.cityofnewyork.us/w/sxx4-xhzg/25te-f2tw?cur=BZhoCkzw311&from=root" frameborder="0"scrolling="no"><a href="https://data.cityofnewyork.us/Environment/Public-Recycling-Bins/sxx4-xhzg" title="Public Recycling Bins" target="_blank">Public Recycling Bins</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
+# require "geocoder/railtie"
+# Geocoder::Railtie.insert
 class Recycle
-#   bin_hash =
-#     {
-#       "40.888353, -73.840908" => "E. 223 Street and De Reimer Avenue"
-#       "40.688204, -73.966559" => "Underwood Park"
-#       "40.712796, -74.004816" => "31 Chambers Street"
-#     }
-#   NYC_array = []
-#   NYC_array.push(bin_hash)
-  bins = [{:zip_code => 10466}]
-  attr_accessor :address, :latitiude, :longitude, :plastic
+  attr_accessor :address, :latitiude, :longitude, :plastic, :zip_code
+  attr_reader :bins_results
 #   geocoded_by :address
 #   after_validation :geocode
 
-  def initialize(address, plastic)
-    @address = address
-    @plastic = plastic
+  def initialize(zip_code)
+    @bins = [{:zip_code => 10466, :address => "E. 223 Street and De Reimer Avenue", :bin_number => "Bin #1"}, {:zip_code => 11238, :address => "Underwood Park", :bin_number => "Bin #2"}, {:zip_code => 10007, :address => "31 Chambers Street", :bin_number => "Bin #3"}]
+    @bins_results = []
+    #@address = address
+    #@plastic = plastic
+    @zip_code = zip_code
+  end
+
+  def return_bins
+    if @zip_code == 10007
+      @bins.each do |bin|
+          bin.each do |key, value|
+            if value == 10007
+              @bins_results.push(bin)
+            end
+          end
+      end
+      elsif @zip_code == 10466
+        @bins.each do |bin|
+          bin.each do |key, value|
+            if value == 10466
+              @bins_results.push(bin)
+            end
+          end
+        end
+      elsif @zip_code == 11238
+         @bins.each do |bin|
+          bin.each do |key, value|
+            if value == 11238
+              @bins_results.push(bin)
+            end
+          end
+         end
+      end
+    return @bins_results
   end
 end
