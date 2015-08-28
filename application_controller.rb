@@ -8,8 +8,8 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
-  post '/full_results' do
-    erb :full_list
+  get '/full_list' do
+    "Hello World"
   end
 
   post '/bin_results' do
