@@ -5,7 +5,12 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h2>Here is a list of bins in order of proximity: <%= @recycle1.address %> </h2>
-    <h2><%= @recycle1.plastic %></h2>
+    <h2>Here's the information: </h2>
+    <% @recycle1.return_bins.each do |bin| %>
+    <div>
+      <h1>Zip code: <%= bin[:zip_code] %></h1>
+      <h1>Address: <%= bin[:address] %></h1>
+    </div>
+    <% end %>
   </body>
 </html>

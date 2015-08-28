@@ -13,9 +13,12 @@ class MyApp < Sinatra::Base
   end
 
   post '/bin_results' do
-    @recycle1 = Recycle.new(params[:input_address], params[:input_plastic])
-    @recycle1.address = params[:input_address]
-    @recycle1.plastic = params[:input_plastic]
+    zip_code = params[:input_zip_code]
+    zip_code = zip_code.to_i
+    @recycle1 = Recycle.new(zip_code)
+    @results = @recycle1.return_bins
+#     @recycle1.address = params[:input_address]
+#     @recycle1.plastic = params[:input_plastic]
     erb :bin_results
   end
 end
